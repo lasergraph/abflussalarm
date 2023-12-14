@@ -18,6 +18,6 @@ ENV AUTH=""
 #Dateien kopieren
 COPY main.py /opt/scripts/
 
-VOLUME /opt/scripts/ --name abflussalarm
+VOLUME /opt/scripts/
 
 ENTRYPOINT python3 /opt/scripts/main.py
