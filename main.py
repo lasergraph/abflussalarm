@@ -4,15 +4,11 @@ import time
 import pytz
 from datetime import datetime 
 
+threshold = float(os.getenv("THRESHOLD"))
+auth = str(os.getenv("AUTH"))
+dest_url = str(os.getenv("DEST_URL"))
+
 source_url = "https://www.ag.ch/app/hydrometrie/kiwis/KiWIS?service=kisters&type=queryServices&request=getTimeseriesValues&datasource=0&metadata=true&format=json&ts_id=26780042"
-
-threshold = os.getenv("THRESHOLD")
-auth = os.getenv("AUTH")
-dest_url = os.getenv("DEST_URL")
-
-threshold = 5
-dest_url = "https://alamos.mauchle.net/rest/external/http/alarm/v2"
-auth = "Suhre"
 intervall = 60
 old_time = ""
 alarm = False
