@@ -27,7 +27,6 @@ def get_station(url: str):
     return {"name": station_name, "timestamp": station_timestamp.strftime("%d.%m.%Y %H:%M"), "value": station_value, "unit": station_unit}
 
 
-
 # Senden des Alarms an Server via HTTP POST Request
 def send_alarm(station: dict, url: str, auth: str):
     now = datetime.now(pytz.timezone("Europe/Zurich"))
@@ -52,7 +51,7 @@ def send_alarm(station: dict, url: str, auth: str):
             'water_ts': station["timestamp"],
             'water_unit': station["unit"],
             'water_abfluss': station["value"]
-        }
+            }
 		}
 	}
 	#Senden Request an FE2 Server

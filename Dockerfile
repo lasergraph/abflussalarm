@@ -11,9 +11,9 @@ RUN pip install --upgrade pip
 RUN pip install datetime requests pytz
 
 #Environment variables
-ENV DEST_URL="https://alamos.mauchle.net"
+ENV DEST_URL="https://<<FE2SERVER:PORT>>/rest/external/http/alarm/v2"
 ENV THRESHOLD="15"
-ENV AUTH=""
+ENV AUTH="MY_SECRET"
 
 #Dateien kopieren
 COPY main.py /opt/scripts/
